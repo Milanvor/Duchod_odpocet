@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <TextView
+        android:id="@+id/dat1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vyberte datum odchodu do penze (portál CSSZ)"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibsetdate"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dat1"
+        app:srcCompat="@drawable/_day_256" />
+
+
+    <TextView
+        android:id="@+id/rok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Předdůchod/předčasný duchod roků:"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibsetdate" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="5"
+        android:progress="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rok" />
+    <TextView
+        android:id="@+id/rok1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Předdůchod/předčasný duchod měsíců:"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="11"
+        android:progress="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rok1" />
+    <TextView
+        android:id="@+id/nad1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aktuální datum"
+
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/nad2"
+        app:layout_constraintTop_toBottomOf="@id/seekBar1" />
+
+    <TextView
+        android:id="@+id/nad2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datum odchodu"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/nad1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBar1" />
+
+    <TextView
+        android:id="@+id/dateakt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/alert_dark_frame"
+        android:fontFamily="@font/adlam_display"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/nad1"
+        app:layout_constraintRight_toRightOf="@id/nad1"
+        app:layout_constraintTop_toBottomOf="@id/nad1" />
+
+
+
+    <TextView
+        android:id="@+id/dateodch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/alert_dark_frame"
+        android:fontFamily="@font/adlam_display"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/nad2"
+        app:layout_constraintRight_toRightOf="@id/nad2"
+        app:layout_constraintTop_toBottomOf="@id/nad2" />
+
+    <TextView
+        android:id="@+id/nad3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zbývá:"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/dateodch" />
+
+    <TextView
+        android:id="@+id/vysledek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/alert_dark_frame"
+        android:fontFamily="@font/adlam_display"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/nad3" />
+
+    <TextView
+        android:id="@+id/nad4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Celkem měsíců:"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/vysledek" />
+
+    <TextView
+        android:id="@+id/vysledekmesic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/alert_dark_frame"
+        android:fontFamily="@font/adlam_display"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/nad4" />
+
+    <TextView
+        android:id="@+id/nad5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Celkem týdnů:"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/vysledekmesic" />
+
+    <TextView
+        android:id="@+id/vysledektyden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/alert_dark_frame"
+        android:fontFamily="@font/adlam_display"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/nad5" />
+
+    <TextView
+        android:id="@+id/nad6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Celkem dnů:"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/vysledektyden" />
+
+    <TextView
+        android:id="@+id/vysledekden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/alert_dark_frame"
+        android:fontFamily="@font/adlam_display"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/nad6" />
+
+    <TextView
+        android:id="@+id/nad7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Celkem hodin:"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/vysledekden" />
+
+    <TextView
+        android:id="@+id/vysledekhodin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/alert_dark_frame"
+        android:fontFamily="@font/adlam_display"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/nad7" />
+
+    <TextView
+        android:id="@+id/nad8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Celkem minut:"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/vysledekhodin" />
+
+    <TextView
+        android:id="@+id/vysledekminut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/alert_dark_frame"
+        android:fontFamily="@font/adlam_display"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/nad8" />
+
+    <TextView
+        android:id="@+id/nad9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Celkem vteřin:"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/vysledekminut" />
+
+    <TextView
+        android:id="@+id/vysledekvterin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/alert_dark_frame"
+        android:fontFamily="@font/adlam_display"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ibsetdate"
+        app:layout_constraintRight_toRightOf="@id/ibsetdate"
+        app:layout_constraintTop_toBottomOf="@id/nad9"
+        />
+
+    <TextView
+        android:id="@+id/help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/help1"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:autoLink="all"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vysledekvterin" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Důchod</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="help">
+        <![CDATA[Podpora: <u>www.vinohradska.com</u>.]]>
+    </string>
+    <string name="datumnast">dd.mm.yyyy</string>
+    <string name="help1"><u>Podpora: www.vinohradska.com</u></string>
+</resources>
